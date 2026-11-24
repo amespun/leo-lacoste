@@ -16,7 +16,7 @@ document.documentElement.classList.add('js');
   // Logo band: duplicate the list so the loop is seamless
   $$('.marquee ul').forEach(ul => { if (still) return; ul.innerHTML += ul.innerHTML.replace(/<li/g, '<li aria-hidden="true"'); });
 
-  // Hero photos: crossfade, pause on hover or with the button. Add <img> tags inside .photo to add photos.
+  // Hero photos: crossfade, pauses while the pointer is over it. Add <img> tags inside .photo to add photos.
   const photo = $('[data-photos]');
   if (photo) {
     // photos whose file is missing are taken out, so an empty slot never shows
@@ -25,18 +25,16 @@ document.documentElement.classList.add('js');
       .then(list => slides(photo, list.filter(Boolean)));
   }
   function slides(photo, imgs) {
-    const cap = $('.cap span', photo), btn = $('.pause', photo);
-    let i = 0, hover = false, stop = false;
+    const cap = $('.cap span', photo);
+    let i = 0, hover = false;
     if (!imgs.length) return;
     imgs.forEach((im, n) => im.classList.toggle('on', n === 0));
     if (cap && imgs[0].dataset.cap) cap.textContent = imgs[0].dataset.cap;
     const show = n => { imgs[i].classList.remove('on'); i = n; imgs[i].classList.add('on'); if (cap && imgs[i].dataset.cap) cap.textContent = imgs[i].dataset.cap; };
     if (imgs.length > 1 && !still) {
-      btn.hidden = false;
-      setInterval(() => { if (!hover && !stop && !document.hidden) show((i + 1) % imgs.length); }, 3600);
+      setInterval(() => { if (!hover && !document.hidden) show((i + 1) % imgs.length); }, 5000);
       photo.addEventListener('mouseenter', () => hover = true);
       photo.addEventListener('mouseleave', () => hover = false);
-      btn.addEventListener('click', () => { stop = !stop; btn.textContent = stop ? 'Play' : 'Pause'; });
     }
   }
 
@@ -109,6 +107,9 @@ document.documentElement.classList.add('js');
 
   // Language bars fill when seen
   io($$('.langs'), el => el.classList.add('in'), { threshold: .3 });
+
+  // Footer year follows the calendar
+  $$('[data-year]').forEach(y => { y.textContent = new Date().getFullYear(); });
 
   // Contact: rotating greeting + copy email
   const g = $('[data-greet]');

@@ -7,6 +7,7 @@ A small multi-page site, plain HTML, CSS and JavaScript: no framework, no build 
 | Home | `index.html` |
 | Career | `career.html` |
 | My next step | `my-next-step.html` |
+| Beyond work (AI and hobbies) | `beyond-work.html` |
 | FAQ | `faq.html` |
 
 Shared styles are in `assets/style.css` (colours and fonts are tokens at the top) and shared behaviour in `assets/site.js`.
@@ -17,6 +18,7 @@ Double-click `index.html`. Everything works offline except the display font (New
 ## Still to fill in (marked with a dashed yellow "Needs from Léo" tag)
 - **Main photo**: `img/leo-meeting.webp` is the first hero photo; the portrait is second.
 - More hero photos: add another `<img src="img/…" alt="…" data-cap="Caption">` inside `.photo` in `index.html`. Missing files are skipped.
+- "Book a 20-minute chat" button: replace `href="#contact"` (with `data-book`) by his Google Calendar booking page or Calendly link, on every page
 - Email address in the contact block (currently `name@email.com`)
 - CV PDF: put it next to `index.html` as `cv-leo-lacoste.pdf`
 - Two or three results for the Jan Zandbergen Group role (`career.html`)
