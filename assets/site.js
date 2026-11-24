@@ -108,6 +108,27 @@ document.documentElement.classList.add('js');
   // Language bars fill when seen
   io($$('.langs'), el => el.classList.add('in'), { threshold: .3 });
 
+  // Menu button when the tabs don't fit
+  const top = $('.top'), mb = $('.menu-btn');
+  if (top && mb) {
+    mb.addEventListener('click', () => { const o = top.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && top.classList.contains('open')) { top.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.focus(); } });
+  }
+
+  // AI builds: hover or tap an agent to light up what it reads and writes
+  $$('[data-os]').forEach(os => {
+    const agents = $$('.agent', os), info = $('.os-info', os);
+    const pick = a => {
+      agents.forEach(b => b.setAttribute('aria-pressed', b === a));
+      const ids = a.dataset.links.split(' ');
+      $$('.os-col:not(.os-mid) .node', os).forEach(n => n.classList.toggle('lit', ids.includes(n.dataset.id)));
+      os.classList.add('on');
+      $('b', info).textContent = a.dataset.name; $('p', info).textContent = a.dataset.desc; $('.gain', info).textContent = a.dataset.gain;
+    };
+    agents.forEach(a => { a.addEventListener('click', () => pick(a)); a.addEventListener('mouseenter', () => pick(a)); a.addEventListener('focus', () => pick(a)); });
+    if (agents[0]) pick(agents[0]);
+  });
+
   // Footer year follows the calendar
   $$('[data-year]').forEach(y => { y.textContent = new Date().getFullYear(); });
 

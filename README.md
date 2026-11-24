@@ -7,7 +7,9 @@ A small multi-page site, plain HTML, CSS and JavaScript: no framework, no build 
 | Home | `index.html` |
 | Career | `career.html` |
 | My next step | `my-next-step.html` |
-| Beyond work (AI and hobbies) | `beyond-work.html` |
+| AI builds | `ai-builds.html` |
+| Hobbies | `hobbies.html` |
+| Page not found | `404.html` |
 | FAQ | `faq.html` |
 
 Shared styles are in `assets/style.css` (colours and fonts are tokens at the top) and shared behaviour in `assets/site.js`.

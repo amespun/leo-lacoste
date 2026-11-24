@@ -18,8 +18,9 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="img/leo-avatar.webp" alt="" width="30" height="30"><span>Léo Lacoste</span></a>
-    <nav class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="career.html">Career</a><a href="my-next-step.html">My next step</a><a href="beyond-work.html">Beyond work</a><a href="faq.html">FAQ</a></nav>
-    <a class="btn btn-dark btn-sm" href="#contact">Get in touch</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="nav" id="main-nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="career.html">Career</a><a href="my-next-step.html">My next step</a><a href="ai-builds.html">AI builds</a><a href="hobbies.html">Hobbies</a><a href="faq.html">FAQ</a></nav>
+    <a class="btn btn-dark btn-sm" href="book-a-chat">Book a chat</a>
   </div>
 </header>
 <main id="main">
@@ -167,11 +168,11 @@
   <div class="wrap">
     <div class="panel t-blue ai-teaser rv">
       <div>
-        <p class="over dot">Beyond work</p>
+        <p class="over dot">AI builds</p>
         <h2 id="ai-teaser-h">I sell with <em>AI</em> on my side.</h2>
-        <p>A meeting assistant that writes my follow-ups, an investing research desk I built with Claude, and the gliders I learned to fly in France.</p>
+        <p>Four agents that take the admin out of selling: call notes, account research, follow-ups and a Monday pipeline review. Nothing reaches a customer without my approval.</p>
       </div>
-      <a class="btn btn-dark" href="beyond-work.html">See what I build <span class="ar">→</span></a>
+      <a class="btn btn-dark" href="ai-builds.html">See how it works <span class="ar">→</span></a>
     </div>
   </div>
 </section>
@@ -191,19 +192,16 @@
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <div class="cbox rv">
-      <div>
-        <p class="over dot">Contact</p>
-        <h2 id="contact-h"><span class="greet" data-greet>Hello</span>, let’s <em>talk</em>.</h2>
-        <p>If you are growing a B2B business across Europe, I would like twenty minutes with you. In French, English, Spanish, German, or my improving Dutch.</p>
-        <a class="btn btn-dark book todo" href="#contact" data-book>Book a 20-minute chat <span class="ar">→</span><span class="todo-tag">Needs from Léo</span></a>
-      </div>
-      <div class="reach">
-        <button class="ch todo" type="button" data-copy aria-label="Copy email address"><span><small>Email</small><b>name@email.com</b></span><em>Copy</em><span class="todo-tag">Needs from Léo</span></button>
-        <a class="ch" href="https://www.linkedin.com/in/leolacoste/"><span><small>LinkedIn</small><b>Message me on LinkedIn</b></span><em>Open ↗</em></a>
-        <a class="ch todo" href="cv-leo-lacoste.pdf" download><span><small>CV</small><b>Download my CV</b></span><em>PDF ↓</em><span class="todo-tag">Needs from Léo</span></a>
+      <h2 id="contact-h"><span class="greet" data-greet>Hello</span>, let’s <em>talk</em>.</h2>
+      <p>Hiring for key accounts or a new market in Europe, or something I should know about? Twenty minutes is enough to see if there is a fit. In French, English, Spanish, German, or my improving Dutch.</p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="book-a-chat">Book a 20-minute chat <span class="ar">→</span></a>
+        <a class="btn btn-soft" href="email">Email me</a>
+        <a class="btn btn-soft" href="cv-leo-lacoste.pdf">Download CV <span class="ar">↓</span></a>
+        <a class="btn btn-soft" href="https://www.linkedin.com/in/leolacoste/">LinkedIn <span class="ar">↗</span></a>
       </div>
     </div>
-    <div class="foot"><span>© <span data-year>2026</span> Léo Lacoste · Utrecht area, the Netherlands</span><nav aria-label="Footer"><a href="index.html">Home</a><a href="career.html">Career</a><a href="my-next-step.html">My next step</a><a href="beyond-work.html">Beyond work</a><a href="faq.html">FAQ</a></nav></div>
+    <div class="foot"><span>© <span data-year>2026</span> Léo Lacoste</span><nav aria-label="Elsewhere"><a href="email">Email</a><a href="https://www.linkedin.com/in/leolacoste/">LinkedIn</a></nav></div>
   </div>
 </section>
 </main>
