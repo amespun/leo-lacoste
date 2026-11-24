@@ -111,8 +111,11 @@ document.documentElement.classList.add('js');
   // Menu button when the tabs don't fit
   const top = $('.top'), mb = $('.menu-btn');
   if (top && mb) {
-    mb.addEventListener('click', () => { const o = top.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && top.classList.contains('open')) { top.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.focus(); } });
+    mb.addEventListener('click', () => { const o = top.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.firstChild.textContent = o ? 'Close' : 'Menu'; });
+    const close = () => { top.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.firstChild.textContent = 'Menu'; };
+    $$('.nav a', top).forEach(a => a.addEventListener('click', close));
+    document.addEventListener('click', e => { if (top.classList.contains('open') && !top.contains(e.target)) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && top.classList.contains('open')) { close(); mb.focus(); } });
   }
 
   // AI builds: hover or tap an agent to light up what it reads and writes
