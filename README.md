@@ -1,4 +1,4 @@
-# Léo Lacoste – profile site (v2)
+# Léo Lacoste – profile site
 
 A small multi-page site, plain HTML, CSS and JavaScript: no framework, no build step.
 
@@ -8,7 +8,6 @@ A small multi-page site, plain HTML, CSS and JavaScript: no framework, no build 
 | Career | `career.html` |
 | My next step | `my-next-step.html` |
 | FAQ | `faq.html` |
-| Previous one-page version, kept for comparison | `v1.html` |
 
 Shared styles are in `assets/style.css` (colours and fonts are tokens at the top) and shared behaviour in `assets/site.js`.
 
@@ -16,7 +15,7 @@ Shared styles are in `assets/style.css` (colours and fonts are tokens at the top
 Double-click `index.html`. Everything works offline except the display font (Newsreader, from Google Fonts), which falls back to Georgia.
 
 ## Still to fill in (marked with a dashed yellow "Needs from Léo" tag)
-- **Main photo**: put the meeting photo at `img/leo-meeting.jpg`. It becomes the first photo in the hero; the portrait is second. Until the file exists, the portrait shows alone.
+- **Main photo**: `img/leo-meeting.webp` is the first hero photo; the portrait is second.
 - More hero photos: add another `<img src="img/…" alt="…" data-cap="Caption">` inside `.photo` in `index.html`. Missing files are skipped.
 - Email address in the contact block (currently `name@email.com`)
 - CV PDF: put it next to `index.html` as `cv-leo-lacoste.pdf`
