@@ -1,30 +1,30 @@
-# Léo Lacoste – personal profile site
+# Léo Lacoste – profile site (v2)
 
-A one-page site, plain HTML and CSS: no framework, no build step.
+A small multi-page site, plain HTML, CSS and JavaScript: no framework, no build step.
+
+| Page | File |
+|---|---|
+| Home | `index.html` |
+| Career | `career.html` |
+| My next step | `my-next-step.html` |
+| FAQ | `faq.html` |
+| Previous one-page version, kept for comparison | `v1.html` |
+
+Shared styles are in `assets/style.css` (colours and fonts are tokens at the top) and shared behaviour in `assets/site.js`.
 
 ## Open it
-Double-click `index.html`. It works offline in any browser.
+Double-click `index.html`. Everything works offline except the display font (Newsreader, from Google Fonts), which falls back to Georgia.
 
-## Edit it with Claude
-1. Unzip this folder.
-2. In Claude (Claude Code or the desktop app), open or attach the `leo-lacoste-site` folder.
-3. Ask in plain words, for example:
-   - "Change my email in the footer to …"
-   - "Add these 3 results to the Jan Zandbergen role: …"
-   - "Replace the portrait with this photo."
-
-Everything is in `index.html`: styles at the top, content in the middle, a small script at the bottom.
-
-## Still to fill in (marked with a dashed yellow "Needs from Léo" box)
-- Email address in the footer (currently `name@email.com`)
+## Still to fill in (marked with a dashed yellow "Needs from Léo" tag)
+- **Main photo**: put the meeting photo at `img/leo-meeting.jpg`. It becomes the first photo in the hero; the portrait is second. Until the file exists, the portrait shows alone.
+- More hero photos: add another `<img src="img/…" alt="…" data-cap="Caption">` inside `.photo` in `index.html`. Missing files are skipped.
+- Email address in the contact block (currently `name@email.com`)
 - CV PDF: put it next to `index.html` as `cv-leo-lacoste.pdf`
-- 2–3 results for the Jan Zandbergen Group role
-- Optional: a sharper photo (shirt or jacket, plain background) for `img/leo-portrait.webp`
-
-## Put it online (free)
-Drag the folder onto https://app.netlify.com/drop, or push it to a GitHub repo and turn on GitHub Pages. A domain such as leolacoste.com costs about €10–15 a year.
+- Two or three results for the Jan Zandbergen Group role (`career.html`)
+- Confirm the "My next step" page: it is written from his CV, as a draft of the role he is after.
 
 ## Design notes
-- Colours: navy `#121A33` and champagne gold `#D6BC88`, on white and light grey.
-- Fonts: Archivo (name, numbers, headings) and Inter (text).
-- The `noindex` tag keeps it out of Google until he's ready. Remove it from `<head>` to make it public.
+- Inspired by the structure and voice of a reference portfolio: tabs, a short version in four lines, one interactive signature (a map of the European markets Léo has sold into), results-first copy in the first person.
+- Colours: ink `#14161B` on warm white, navy accent `#1D3A7A`, tinted sand, blue and sage panels.
+- Fonts: Newsreader (headings) and Inter (text).
+- The `noindex` tag keeps it out of Google until he's ready. Remove it from each page's `<head>` to make it public.
